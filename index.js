@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import contactRoutes from "./routes/contact.js";
 
-dotenv.config();
+// dotenv.config();
 
 const app = express();
 
