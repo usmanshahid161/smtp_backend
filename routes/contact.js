@@ -5,13 +5,15 @@ const router = express.Router();
 
 router.post("/send-email", async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message, phone, title } = req.body;
     await sendEmail({
       to: process.env.TO_EMAIL,
       subject: "New Request",
       html: `
         <h3>New Contact Form Submission</h3>
-        <p><b>Name:</b> ${name}</p>
+        <p><b>Name:</b> ${error}</p>
+        <p><b>Title:</b> ${title}</p>
+        <p><b>Phone:</b> ${phone}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Message:</b> ${message}</p>
       `,
